@@ -1,11 +1,10 @@
   "use client"
 import React from "react";
 import Image from "next/image";
-import { FaHeart } from "react-icons/fa6";
+
 import { FiCheck } from "react-icons/fi";
 import { useState } from "react";
-import { IoCartSharp } from "react-icons/io5";
-import { IoIosSearch } from "react-icons/io";
+
 const FreePricing=()=>{
 
         const [isMonthly, setIsMonthly] = useState(true);

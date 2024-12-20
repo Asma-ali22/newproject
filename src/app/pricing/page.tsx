@@ -121,20 +121,7 @@ const Pricing=()=>{
       <button className="bg-[#23A6F0] hover:bg-blue-600 w-[186px] h-[52px] text-white px-6 py-2 rounded-md transition mb-8">
         Try it free now
       </button>
-      <div className="flex space-x-4">
-        <a href="#" className="text-gray-500 hover:text-blue-500 transition">
-          <i className="fa-brands fa-twitter text-2xl"></i>
-        </a>
-        <a href="#" className="text-gray-500 hover:text-blue-500 transition">
-          <i className="fa-brands fa-facebook text-2xl"></i>
-        </a>
-        <a href="#" className="text-gray-500 hover:text-blue-500 transition">
-          <i className="fa-brands fa-instagram text-2xl"></i>
-        </a>
-        <a href="#" className="text-gray-500 hover:text-blue-500 transition">
-          <i className="fa-brands fa-linkedin text-2xl"></i>
-        </a>
-      </div>
+      
     </section>
  <Footer/>
  </div>

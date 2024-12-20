@@ -66,9 +66,9 @@ const Pricing=()=>{
         <nav className="text-sm text-gray-500">
           <ol className="list-reset inline-flex space-x-2">
             <li>
-              <a href="/" className="text-blue-500 hover:underline">
+              <Link href="/" className="text-blue-500 hover:underline">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>Pricing</li>

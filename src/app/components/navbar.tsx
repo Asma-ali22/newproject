@@ -74,7 +74,7 @@ import React from 'react';
                  <Link href="/">Home</Link>
                </li>
                <li className='p-4 hover:underline underline-offset-2'>
-                 <Link href="/shop">shop</Link>
+                 <Link href="/pro">product</Link>
                </li>
                <li className='p-4 hover:underline underline-offset-2'>
                  <Link href="/about">About</Link>

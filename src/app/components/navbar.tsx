@@ -10,9 +10,10 @@ import React from 'react';
  import { FaTwitter } from "react-icons/fa";
  import { FaInstagramSquare } from "react-icons/fa";
  import { FaCartArrowDown } from "react-icons/fa";
- import { useState } from 'react';
- import { FaHeart } from "react-icons/fa";
  
+ import { FaHeart } from "react-icons/fa";
+ import { useCartStore } from '../store/cartStore';
+ import { useState } from 'react';
 
 
 
@@ -22,6 +23,18 @@ import React from 'react';
    const toggle = () => {
      setOpen(!open);
    };
+  //  const cartItems = useCartStore((state) => state.cartItems);
+  //  const [isCartOpen, setIsCartOpen] = useState(false);
+ 
+  //  const toggleCart = () => {
+  //    setIsCartOpen(!isCartOpen)
+  //  }
+  const cartItems = useCartStore((state:any) => state.cartItems);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // const toggleCart = () => {
+  //   setIsCartOpen(!isCartOpen);
+  // };
   return(
    
        <div>
@@ -80,7 +93,7 @@ import React from 'react';
                  <Link href="/about">About</Link>
                </li>
                <li className='p-4 hover:underline underline-offset-2'>
-                 <Link href="/">Blog</Link>
+                 <Link href="/blog">Blog</Link>
                </li>
                <li className='p-4 hover:underline underline-offset-2'>
                  <Link href="/contact">Contact</Link>
@@ -95,7 +108,7 @@ import React from 'react';
              {/* Search bar - hidden on small screens */}
              <ul>
                 <li className='p-4 hover:underline underline-offset-2 text-blue-400'>
-                 <Link href="/">Login/Register</Link>
+                 <Link href="/signup">Login/Register</Link>
                </li>
               
              </ul>
@@ -103,8 +116,34 @@ import React from 'react';
              {/* Icons */}
              <CiSearch  className='text-blue-400 text-2xl'/>
              <FaHeart  className='text-2xl text-blue-400'/>
-             <FaCartArrowDown  className='text-blue-400 mr-1 text-2xl'/>
- 
+              {/* < FaCartArrowDown  />  */}
+             <div className="flex items-center relative">
+            {/* <button
+              onClick={toggleCart}
+              className="text-gray-800 hover:text-gray-600 mr-4"
+            >
+              < FaCartArrowDown  /> ({cartItems.length})
+            </button>
+            {isCartOpen && <CartDropdown />} */}
+            {/* <button
+              onClick={toggleCart}
+              className="text-gray-800 hover:text-gray-600 mr-4"
+            >
+              < FaCartArrowDown  />  ({cartItems.length})
+            </button>
+            {isCartOpen && <CartDropdown />} */}
+              <Link href="/cart" className="relative hover:text-gray-400">
+              < FaCartArrowDown  />
+            {cartItems.length > 0 && (
+              <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-1">
+                {cartItems.length}
+              </span>
+            )}
+          </Link>
+          </div>
+            
+  
+       
              {/* Toggle Button for mobile */}
              <button
                className="text-black block md:hidden text-3xl z-50"

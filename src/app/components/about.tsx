@@ -17,7 +17,7 @@ const About=()=>{
   <nav className="w-full md:w-auto mt-4 md:mt-0">
     <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-6 text-gray-600 text-center md:text-left">
       <li>
-        <Link href="/home" className="hover:text-blue-500">
+        <Link href="/" className="hover:text-blue-500">
           Home
         </Link>
       </li>

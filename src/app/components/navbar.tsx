@@ -23,18 +23,11 @@ import React from 'react';
    const toggle = () => {
      setOpen(!open);
    };
-  //  const cartItems = useCartStore((state) => state.cartItems);
-  //  const [isCartOpen, setIsCartOpen] = useState(false);
- 
-  //  const toggleCart = () => {
-  //    setIsCartOpen(!isCartOpen)
-  //  }
-  const cartItems = useCartStore((state:any) => state.cartItems);
+  
+  const cartItems = useCartStore((state) => state.cartItems);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // const toggleCart = () => {
-  //   setIsCartOpen(!isCartOpen);
-  // };
+  
   return(
    
        <div>
@@ -118,20 +111,7 @@ import React from 'react';
              <FaHeart  className='text-2xl text-blue-400'/>
               {/* < FaCartArrowDown  />  */}
              <div className="flex items-center relative">
-            {/* <button
-              onClick={toggleCart}
-              className="text-gray-800 hover:text-gray-600 mr-4"
-            >
-              < FaCartArrowDown  /> ({cartItems.length})
-            </button>
-            {isCartOpen && <CartDropdown />} */}
-            {/* <button
-              onClick={toggleCart}
-              className="text-gray-800 hover:text-gray-600 mr-4"
-            >
-              < FaCartArrowDown  />  ({cartItems.length})
-            </button>
-            {isCartOpen && <CartDropdown />} */}
+          
               <Link href="/cart" className="relative hover:text-gray-400">
               < FaCartArrowDown  />
             {cartItems.length > 0 && (

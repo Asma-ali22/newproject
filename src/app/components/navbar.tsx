@@ -25,7 +25,7 @@ import React from 'react';
    };
   
   const cartItems = useCartStore((state) => state.cartItems);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  //const [isCartOpen, setIsCartOpen] = useState(false);
 
   
   return(

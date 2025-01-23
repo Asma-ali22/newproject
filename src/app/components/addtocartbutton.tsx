@@ -9,6 +9,7 @@ interface Product {
   price: number;
   imageUrl: string;
   quantity: number;
+  title:string
 }
 
 interface AddToCartButtonProps {
@@ -17,7 +18,7 @@ interface AddToCartButtonProps {
 
 export default function AddToCartButton({ product }: AddToCartButtonProps) {
   // Properly type the Zustand state
-  const addToCart = useCartStore((state:any) => state.addToCart as (product: Product) => void);
+  const addToCart = useCartStore((state) => state.addToCart as (product: Product) => void);
 
   const handleAddToCart = () => {
     addToCart(product);

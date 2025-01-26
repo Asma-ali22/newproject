@@ -1,6 +1,6 @@
-'use client'; // Mark this as a Client Component
 
-import { useState } from 'react';
+"use client"
+import { useState, useEffect } from 'react';
 import { client } from '@/sanity/lib/client';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
@@ -40,9 +40,9 @@ export default function ProPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Fetch products on component mount
-  useState(() => {
+  useEffect(() => {
     getProducts().then((data) => setProducts(data));
-  }, );
+  }, []);
 
   // Filter products based on search query
   const filteredProducts = products.filter(
@@ -59,7 +59,7 @@ export default function ProPage() {
         <SearchBar onSearch={(query) => setSearchQuery(query)} />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
-            <Link key={product._id} href={`/pro/${product._id}`}>
+            <Link key={product._id} href={`/blog/${product._id}`}>
               <div className="border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white flex flex-col items-center text-center cursor-pointer">
                 <Image
                   width={500}

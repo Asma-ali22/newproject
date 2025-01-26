@@ -1,6 +1,6 @@
 
-'use client'; // Mark this as a Client Component
-
+ // Mark this as a Client Component
+"use client"
 import { useState, useEffect } from 'react';
 import { client } from '@/sanity/lib/client';
 import Navbar from '../components/navbar';
@@ -13,6 +13,7 @@ interface Item {
   _id: string;
   name: string;
   description: string;
+  title:string
   price: number;
   discountPrice?: number;
   color?: string;
@@ -27,6 +28,7 @@ interface Item {
 async function getItems(): Promise<Item[]> {
   const query = `*[_type == "items"] {
     _id,
+    title,
     name,
     // description,
     price,
@@ -79,6 +81,7 @@ export default function ItemsPage() {
                 />
                 <div className="p-4 flex flex-col items-center">
                   <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
+                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
                   
                   <p className="text-lg font-bold text-gray-800">
                     Price: ${item.price}

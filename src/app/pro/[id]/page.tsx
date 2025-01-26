@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import AddToCartButton from '@/app/components/addtocartbutton';
 import Footer from '@/app/components/footer';
 import Navbar from '@/app/components/navbar';
+// import { title } from 'process';
 
 interface Item {
   _id: string;
@@ -85,9 +86,11 @@ export default async function ItemPage({ params }: PageProps) {
         {/* Item Image */}
         <div className="w-full md:w-1/2 relative h-96">
           <Image
+          width={400}
+          height={400}
             src={item.image.asset.url}
             alt={item.name}
-            fill
+            
             className="object-cover rounded-lg"
           />
         </div>
@@ -131,6 +134,8 @@ export default async function ItemPage({ params }: PageProps) {
                 price: item.price,
                 imageUrl: item.image.asset.url,
                 quantity: 1,
+                title:item.description
+                
               }}
             />
           </div>

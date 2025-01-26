@@ -1,6 +1,8 @@
 import { defineType, defineField } from "sanity";
 
 export const items = defineType({
+
+
   name: "items",
   title: "items",
   type: "document",
